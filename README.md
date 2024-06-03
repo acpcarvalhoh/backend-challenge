@@ -1,7 +1,11 @@
-# API de catálogo de filmes com Autenticação JWT
-![Estrutura do bando de dados](src/assets/draw-table.png)
 
-Esta é uma API construida com NestJS gerenciar usuários e filmes com autenticação JWT.
+---
+
+# API de Catálogo de Filmes com Autenticação JWT
+
+![Estrutura do banco de dados](src/assets/draw-table.png)
+
+Esta é uma API construída com NestJS para gerenciar usuários e filmes com autenticação JWT.
 
 ## Tecnologias Utilizadas
 
@@ -15,37 +19,72 @@ As principais tecnologias utilizadas no desenvolvimento desta API são:
 - JWT
 - Swagger
 
-
 ## Endpoints
 
 A API possui os seguintes endpoints:
 
 ### Usuários
 
-- **POST /users**: Cria um novo usuário na base de dados. Requer os campos "name", "email" e "password" no corpo da requisição.
+- **POST /users**: Cria um novo usuário na base de dados.
+  - **Payload:**
+    ```json
+    {
+      "name": "João Silva",
+      "email": "joao.silva@example.com",
+      "password": "senha123"
+    }
+    ```
 
-- **POST /auth/login**: Responsável por logar o usuário na aplicação gerando um token para o mesmo usar futuramente nas suas requisições. Requer os campos "email" e "password" no corpo da requisição.
+- **POST /auth/login**: Responsável por logar o usuário na aplicação gerando um token para o mesmo usar futuramente nas suas requisições.
+  - **Payload:**
+    ```json
+    {
+      "email": "joao.silva@example.com",
+      "password": "senha123"
+    }
+    ```
 
-### Movies
+### Filmes
 
-- **POST /movies**: Cria um  novo filme para o catálogo. Requer os campos  "title",  no corpo da requisição. Os campos "genre", "director", "releaseYear" e "rating" são opçionais.
+- **POST /movies**: Cria um novo filme para o catálogo.
+  - **Payload:**
+    ```json
+    {
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "releaseYear": 2010,
+      "rating": 8.8
+    }
+    ```
+  - **Nota:** Os campos "genre", "director", "releaseYear" e "rating" são opcionais.
 
-- **PUT /movies/:id**: Atualiza dados de um filme existente. Requer o campo "id" como um parâmetro de rota.
+- **PUT /movies/:id**: Atualiza dados de um filme existente.
+  - **Payload:**
+    ```json
+    {
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "releaseYear": 2010,
+      "rating": 8.8
+    }
+    ```
 
 - **GET /movies**: Lista todos os filmes cadastrados.
 
-- **GET /movies/:id**: Retorna informações detalhadas sobre um filme específico. Requer o campo "id" como um parâmetro de rota..
+- **GET /movies/:id**: Retorna informações detalhadas sobre um filme específico.
 
-- **DELETE /movies/:id**: Exclui um filme específico. Requer o campo "id" como um parâmetro de rota.
-
+- **DELETE /movies/:id**: Exclui um filme específico.
 
 ## Configuração do Projeto
 
 1. Clone o repositório:
 
-  ```bash
+   ```bash
    git clone https://github.com/acpcarvalhoh/backend-challenge/
-  ```
+   ```
+
 2. Instale as dependências:
 
    ```bash
@@ -57,59 +96,56 @@ A API possui os seguintes endpoints:
 
    Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
 
+   ```env
+   DATABASE_URL=sua-url-de-conexao-do-banco-de-dados
+   NODE_ENV=development
+   DATABASE_USERNAME=seu-usuario
+   DATABASE_PASSWORD=sua-senha
+   DATABASE_PORT=5432
+   DATABASE_NAME=nome-do-banco
+   JWT_SECRET_KEY=sua-chave-secreta-para-o-jwt
+   PORT=3000
    ```
-    DATABASE_URL=sua-url-de-conexao-do-banco-de-dados
-    NODE_ENV=
-    DATABASE_USERNAME=
-    DATABASE_PASSAWORD=
-    DATABASE_PORT=
-    DATABASE_NAME=
-    JWT_SECRET_KEY=sua-chave-secreta-para-o-jwt
-    PORT=
 
-  ```
-****
+4. Use o arquivo `docker-compose.yml` para subir o container com o banco de dados PostgreSQL:
 
-- **Docker:**
-  ```sh
-  Use o arquvo docker-compose.yml para subir container com o banco de dados PG
-  ```
+   ```bash
+   docker-compose up -d
+   ```
 
+5. Execute o projeto:
 
-4. Execute o projeto:
+   - **Modo produção:**
+     ```bash
+     npm run start:prod
+     ```
 
-- **production mode:**
-  ```sh
-  npm run start:prod
-  ```
+   - **Modo desenvolvimento com watch:**
+     ```bash
+     npm run start:dev
+     ```
 
-- **watch mode:**
-  ```sh
-  npm run start:dev
-  ```
-
-- **development:**
-  ```sh
-  npm run start
-  ```
-
+   - **Modo desenvolvimento:**
+     ```bash
+     npm run start
+     ```
 
 ## Testes
 
 Para executar os testes, use os seguintes comandos:
 
 - **Unit tests:**
-  ```sh
+  ```bash
   npm run test
   ```
 
 - **e2e tests:**
-  ```sh
+  ```bash
   npm run test:e2e
   ```
 
 - **Test coverage:**
-  ```sh
+  ```bash
   npm run test:cov
   ```
 
@@ -135,6 +171,4 @@ Sinta-se à vontade para entrar em contato comigo para mais informações sobre 
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-
-
-
+---
