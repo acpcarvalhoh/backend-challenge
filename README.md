@@ -83,25 +83,32 @@ A API possui os seguintes endpoints:
   $ npm run start:prod
 ```
 
-## Test
 
-```
-  - unit tests
-  $ npm run test
+## Teste
 
-   - e2e tests
-  $ npm run test:e2e
+Para executar os testes, use os seguintes comandos:
 
-  - test coverage
-  $ npm run test:cov
-```
+- **Unit tests:**
+  ```sh
+  npm run test
+  ```
+
+- **e2e tests:**
+  ```sh
+  npm run test:e2e
+  ```
+
+- **Test coverage:**
+  ```sh
+  npm run test:cov
+  ```
 
 ## Banco de Dados
 
 A API utiliza o banco de dados PostgreSQL para armazenar as informações. As tabelas criadas são:
 
-- Tabela "users": Armazena informações dos usuários, como nome, e-mail, senha".
-- Tabela "movies": Armazena dados dos filmes do catalogo, incluindo título, genero, ano de lançamento, diretor, avaliação e ID do usuário como chave estrageira.
+- **Tabela "users"**: Armazena informações dos usuários, como nome, e-mail, senha.
+- **Tabela "movies"**: Armazena dados dos filmes do catálogo, incluindo título, gênero, ano de lançamento, diretor, avaliação e ID do usuário como chave estrangeira.
 
 ## Autor
 
@@ -114,10 +121,10 @@ Este projeto foi desenvolvido por Adão Carvalho. Aqui estão algumas informaç�
 
 Sinta-se à vontade para entrar em contato comigo para mais informações sobre o projeto ou para qualquer outra questão relacionada.
 
-
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
 
 
 
