@@ -1,7 +1,7 @@
-# API NestJS de catálogo de filmes com Autenticação JWT
+# API de catálogo de filmes com Autenticação JWT
 ![Estrutura do bando de dados](src/assets/draw-table.png)
 
-Esta é uma API REST utilizando NestJS com autenticação JWT para gerenciar usuários e filmes.
+Esta é uma API construida com NestJS gerenciar usuários e filmes com autenticação JWT.
 
 ## Tecnologias Utilizadas
 
