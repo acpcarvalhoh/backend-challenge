@@ -1,16 +1,50 @@
-```markdown
-# Projeto NestJS de catálogo de filmes com Autenticação JWT
+# API NestJS de catálogo de filmes com Autenticação JWT
+![Estrutura do bando de dados](src/assets/draw-table.png)
 
 Este é um projeto NestJS com autenticação JWT para gerenciar usuários e filmes.
 
-## Instalação
+## Tecnologias Utilizadas
+
+As principais tecnologias utilizadas no desenvolvimento desta API são:
+
+- Node.js
+- NestJS
+- TypeScript
+- PostgreSQL
+- JWT
+- Swagger
+
+
+## Endpoints
+
+A API possui os seguintes endpoints:
+
+### Usuários
+
+- **POST /users**: Cria um novo usuário na base de dados. Requer os campos "name", "email" e "password" no corpo da requisição.
+
+- **POST /auth/login**: Responsável por logar o usuário na aplicação gerando um token para o mesmo usar futuramente nas suas requisições. Requer os campos "email" e "password" no corpo da requisição.
+
+### Movies
+
+- **POST /movies**: Cria um  novo filme para o catálogo. Requer os campos  "title",  no corpo da requisição. Os campos "genre", "director", "releaseYear" e "rating" são opçionais.
+
+- **PUT /movies/:id**: Atualiza dos dados de um filme existente. Requer o campo "id" como um parâmetro de rota.
+
+- **GET /movies**: Lista todos os filmes cadastrados.
+
+- **GET /movies/:id**: Retorna informações detalhadas sobre um filme específico. Requer o campo "id" como um parâmetro de rota..
+
+- **DELETE /movies/:id**: Exclui um filme específico. Requer o campo "id" como um parâmetro de rota.
+
+
+## Configuração do Projeto
 
 1. Clone o repositório:
 
-   ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   ```
-
+  ```bash
+   git clone https://github.com/acpcarvalhoh/backend-challenge/
+  ```
 2. Instale as dependências:
 
    ```bash
@@ -23,9 +57,18 @@ Este é um projeto NestJS com autenticação JWT para gerenciar usuários e film
    Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
 
    ```
-   DATABASE_URL=sua-url-de-conexao-do-banco-de-dados
-   JWT_SECRET=sua-chave-secreta-para-o-jwt
-   ```
+    DATABASE_URL=sua-url-de-conexao-do-banco-de-dados
+    NODE_ENV=
+    DATABASE_USERNAME=
+    DATABASE_PASSAWORD=
+    DATABASE_PORT=
+    DATABASE_NAME=
+    JWT_SECRET_KEY=sua-chave-secreta-para-o-jwt
+    PORT=
+
+  ```
+  **Use o arquvo docker-compose.yml para subir container com o banco de dados PG**
+
 
 4. Execute o projeto:
 ```bash
@@ -52,28 +95,28 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Endpoints
+## Banco de Dados
 
-- `POST /auth/signup`: Cria um novo usuário. Envie um corpo JSON com `name`, `email` e `password`.
-- `POST /auth/login`: Faz login e retorna um token JWT. Envie um corpo JSON com `email` e `password`.
-- `GET /movies`: Retorna todos os filmes.
-- `GET /movies/:id`: Retorna um filme específico pelo ID.
-- `POST /movies`: Cria um novo filme. Envie um corpo JSON com `title`, `description` e `year`.
-- `PUT /movies/:id`: Atualiza um filme existente pelo ID. Envie um corpo JSON com os campos a serem atualizados.
-- `DELETE /movies/:id`: Exclui um filme pelo ID.
+A API utiliza o banco de dados PostgreSQL para armazenar as informações. As tabelas criadas são:
 
-## Tecnologias Utilizadas
+- Tabela "users": Armazena informações dos usuários, como nome, e-mail, senha".
+- Tabela "movies": Armazena dados dos filmes do catalogo, incluindo título, genero, ano de lançamento, diretor, avaliação e ID do usuário como chave estrageira.
 
-- Node.js
-- NestJS
-- TypeScript
-- PostgreSQL
-- JWT
-- Swagger
+## Autor
+
+Este projeto foi desenvolvido por Adão Carvalho. Aqui estão algumas informações sobre o autor:
+
+- **Nome**: Adão Carvalho
+- **Descrição**: Sou um desenvolvedor de software apaixonado por tecnologia e programação. Tenho experiência no desenvolvimento de aplicações web e estou sempre buscando aprender novas tecnologias. Este projeto foi criado como parte do meu aprendizado e prática de desenvolvimento de APIs.
+- **Contato**: Você pode entrar em contato comigo pelo e-mail carvalhohuzumak@gmail.com.
+- **Perfil**: Você pode encontrar mais projetos e trabalhos no meu perfil do GitHub: [acpcarvalhoh](https://github.com/acpcarvalhoh)
+
+Sinta-se à vontade para entrar em contato comigo para mais informações sobre o projeto ou para qualquer outra questão relacionada.
 
 
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-```
+
+
 
