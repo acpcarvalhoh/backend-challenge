@@ -68,7 +68,12 @@ A API possui os seguintes endpoints:
     PORT=
 
   ```
-**Use o arquvo docker-compose.yml para subir container com o banco de dados PG**
+****
+
+- **Docker:**
+  ```sh
+  Use o arquvo docker-compose.yml para subir container com o banco de dados PG
+  ```
 
 
 4. Execute o projeto:
