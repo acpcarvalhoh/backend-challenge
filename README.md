@@ -1,7 +1,7 @@
 # API NestJS de catálogo de filmes com Autenticação JWT
 ![Estrutura do bando de dados](src/assets/draw-table.png)
 
-Este é um projeto NestJS com autenticação JWT para gerenciar usuários e filmes.
+Esta é uma API REST utilizando NestJS com autenticação JWT para gerenciar usuários e filmes.
 
 ## Tecnologias Utilizadas
 
@@ -11,6 +11,7 @@ As principais tecnologias utilizadas no desenvolvimento desta API são:
 - NestJS
 - TypeScript
 - PostgreSQL
+- Docker
 - JWT
 - Swagger
 
@@ -29,7 +30,7 @@ A API possui os seguintes endpoints:
 
 - **POST /movies**: Cria um  novo filme para o catálogo. Requer os campos  "title",  no corpo da requisição. Os campos "genre", "director", "releaseYear" e "rating" são opçionais.
 
-- **PUT /movies/:id**: Atualiza dos dados de um filme existente. Requer o campo "id" como um parâmetro de rota.
+- **PUT /movies/:id**: Atualiza dados de um filme existente. Requer o campo "id" como um parâmetro de rota.
 
 - **GET /movies**: Lista todos os filmes cadastrados.
 
