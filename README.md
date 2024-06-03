@@ -3,7 +3,7 @@
 
 # API de Catálogo de Filmes com Autenticação JWT
 
-![Estrutura do banco de dados](src/assets/draw-table.png)
+![Estrutura do banco de dados](src/assets/pg-db.png)
 
 Esta é uma API construída com NestJS para gerenciar usuários e filmes com autenticação JWT.
 
