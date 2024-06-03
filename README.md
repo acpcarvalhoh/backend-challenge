@@ -72,19 +72,24 @@ A API possui os seguintes endpoints:
 
 
 4. Execute o projeto:
-```
-  # development
-  $ npm run start
 
-  # watch mode
-  $ npm run start:dev
+- **production mode:**
+  ```sh
+  npm run start:prod
+  ```
 
-  # production mode
-  $ npm run start:prod
-```
+- **watch mode:**
+  ```sh
+  npm run start:dev
+  ```
+
+- **development:**
+  ```sh
+  npm run start
+  ```
 
 
-## Teste
+## Testes
 
 Para executar os testes, use os seguintes comandos:
 
