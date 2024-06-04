@@ -19,6 +19,7 @@ import { env } from './env';
       username: env.DATABASE_USERNAME,
       password: env.DATABASE_PASSAWORD,
       database: env.DATABASE_NAME,
+      ssl: { rejectUnauthorized: false },
       entities: [User, Movie],
       synchronize: true,
     }),
