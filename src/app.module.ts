@@ -6,6 +6,8 @@ import { Movie } from './typeorm/entities/Movies';
 import { AuthModule } from './auth/auth.module';
 import { Module } from '@nestjs/common';
 import { env } from './env';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -24,7 +26,7 @@ import { env } from './env';
       synchronize: true,
     }),
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

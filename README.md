@@ -77,6 +77,8 @@ A API possui os seguintes endpoints:
 
 - **DELETE /movies/:id**: Exclui um filme específico.
 
+- A API está disponível: https://backend-challenge-mywt.onrender.com
+
 ## Configuração do Projeto
 
 1. Clone o repositório:
